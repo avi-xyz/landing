@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta
     name="description"
-    content="Portable Bluetooth speaker with clear sound, long play time, water resistance, and gentle light effects. Curated by Joyflip."
+    content="Portable Bluetooth speaker with clear sound, long play time, and water resistance. Curated by Joyflip."
   />
 
   <meta property="og:title" content="Joyflip · Portable Bluetooth Party Speaker" />
@@ -51,7 +51,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 24px 16px;
+      padding: 12px;
     }
 
     .page {
@@ -62,7 +62,7 @@
     .card {
       background: var(--card-bg);
       border-radius: var(--radius-card);
-      padding: 28px 28px 26px;
+      padding: 22px 24px;
       border: 1px solid var(--card-border);
       box-shadow: var(--shadow-soft);
       position: relative;
@@ -84,8 +84,8 @@
       position: relative;
       z-index: 1;
       display: grid;
-      grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
-      gap: 32px;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+      gap: 28px;
       align-items: center;
     }
 
@@ -95,10 +95,33 @@
       }
     }
 
+    /* mobile layout: everything above fold */
     @media (max-width: 520px) {
+      body {
+        padding: 8px;
+        align-items: stretch;
+      }
       .card {
-        padding: 22px 18px 22px;
+        height: 100vh;
+        max-height: 720px;
+        padding: 18px 16px;
         border-radius: 24px;
+        display: flex;
+        flex-direction: column;
+      }
+      .card-inner {
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+        flex: 1;
+      }
+      .left {
+        flex: 0 0 auto;
+      }
+      .right {
+        flex: 1 0 auto;
+        display: flex;
+        align-items: flex-end;
       }
     }
 
@@ -123,33 +146,33 @@
     }
 
     h1 {
-      margin: 18px 0 10px;
-      font-size: clamp(28px, 3.8vw, 34px);
-      line-height: 1.15;
+      margin: 16px 0 8px;
+      font-size: clamp(24px, 3.3vw, 32px);
+      line-height: 1.18;
       letter-spacing: -0.03em;
       font-weight: 650;
     }
 
     .subtitle {
-      font-size: 15px;
+      font-size: 14px;
       color: var(--text-muted);
-      max-width: 520px;
-      line-height: 1.6;
+      max-width: 480px;
+      line-height: 1.5;
     }
 
     .meta-strip {
-      margin: 20px 0 22px;
+      margin: 14px 0 18px;
       display: flex;
       flex-direction: column;
-      gap: 10px;
+      gap: 8px;
     }
 
     .meta-item {
       display: grid;
       grid-template-columns: auto 1fr;
       align-items: center;
-      gap: 10px;
-      padding: 9px 12px;
+      gap: 8px;
+      padding: 8px 12px;
       border-radius: 18px;
       background: #f9f9fb;
     }
@@ -184,8 +207,8 @@
       display: flex;
       flex-wrap: wrap;
       align-items: center;
-      gap: 12px;
-      margin-bottom: 20px;
+      gap: 10px;
+      margin-bottom: 14px;
     }
 
     .btn-primary {
@@ -193,7 +216,7 @@
       align-items: center;
       justify-content: center;
       gap: 8px;
-      padding: 11px 22px;
+      padding: 10px 20px;
       border-radius: var(--radius-pill);
       border: 1px solid rgba(0, 0, 0, 0.02);
       outline: none;
@@ -203,7 +226,7 @@
       font-size: 14px;
       color: #ffffff;
       background: linear-gradient(135deg, var(--accent-green), #4cd964);
-      box-shadow: 0 12px 28px rgba(52, 199, 89, 0.45);
+      box-shadow: 0 10px 24px rgba(52, 199, 89, 0.42);
       transform: translateY(0);
       transition:
         transform var(--transition-fast),
@@ -218,25 +241,25 @@
     .btn-primary:hover {
       transform: translateY(-1px);
       filter: brightness(1.03);
-      box-shadow: 0 16px 34px rgba(52, 199, 89, 0.55);
+      box-shadow: 0 14px 30px rgba(52, 199, 89, 0.5);
     }
 
     .btn-primary:active {
       transform: translateY(1px);
-      box-shadow: 0 7px 18px rgba(52, 199, 89, 0.4);
+      box-shadow: 0 7px 18px rgba(52, 199, 89, 0.35);
     }
 
     .btn-secondary {
       display: inline-flex;
       align-items: center;
       gap: 6px;
-      padding: 10px 16px;
+      padding: 9px 14px;
       border-radius: var(--radius-pill);
       border: 1px solid rgba(0, 0, 0, 0.08);
       background: #ffffff;
       color: #3a3a3c;
       text-decoration: none;
-      font-size: 13px;
+      font-size: 12px;
       cursor: pointer;
       transition:
         border-color var(--transition-fast),
@@ -252,8 +275,25 @@
       transform: translateY(-1px);
     }
 
+    .meta-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 10px;
+    }
+
+    .meta-link {
+      border: none;
+      background: transparent;
+      color: var(--accent-blue);
+      font-size: 12px;
+      padding: 0;
+      text-decoration: underline;
+      cursor: pointer;
+    }
+
     .as-seen {
-      font-size: 11px;
+      font-size: 10px;
       text-transform: uppercase;
       letter-spacing: 0.16em;
       color: var(--text-muted);
@@ -262,12 +302,14 @@
     .amazon-row {
       display: inline-flex;
       align-items: center;
-      gap: 9px;
+      gap: 8px;
       padding: 6px 11px;
       border-radius: 18px;
-      margin-top: 6px;
+      margin-top: 5px;
       border: 1px solid rgba(0, 0, 0, 0.06);
       background: #f9f9fb;
+      font-size: 11px;
+      color: #3a3a3c;
     }
 
     .amazon-pill {
@@ -287,28 +329,11 @@
       background: linear-gradient(90deg, #f97316, #facc15);
     }
 
-    .amazon-text {
-      font-size: 11px;
-      color: #3a3a3c;
-    }
-
-    .bottom-strip {
-      margin-top: 16px;
-      padding-top: 12px;
-      border-top: 1px solid rgba(0, 0, 0, 0.06);
-      font-size: 13px;
-      color: var(--text-muted);
-    }
-
-    .bottom-strip strong {
-      color: #1d1d1f;
-    }
-
-    .legal {
-      margin-top: 10px;
+    .legal-inline {
+      margin-top: 8px;
       font-size: 10px;
       color: #a1a1a6;
-      line-height: 1.5;
+      max-width: 460px;
     }
 
     .right {
@@ -316,11 +341,11 @@
     }
 
     .product-card {
-      border-radius: 26px;
-      padding: 16px 16px 14px;
+      border-radius: 24px;
+      padding: 14px 14px 12px;
       background: linear-gradient(145deg, #ffffff, #f4f4f7);
       border: 1px solid rgba(0, 0, 0, 0.06);
-      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.06);
+      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.06);
       overflow: hidden;
       position: relative;
     }
@@ -328,8 +353,8 @@
     .product-headline {
       display: flex;
       justify-content: space-between;
-      gap: 12px;
-      margin-bottom: 10px;
+      gap: 10px;
+      margin-bottom: 8px;
       align-items: center;
     }
 
@@ -343,18 +368,18 @@
     .badge-stack {
       display: flex;
       flex-direction: column;
-      gap: 6px;
+      gap: 4px;
       align-items: flex-end;
     }
 
     .badge {
-      padding: 6px 10px;
+      padding: 4px 8px;
       border-radius: 14px;
-      font-size: 11px;
-      border: 1px solid rgba(0, 0, 0, 0.06);
-      background: rgba(255, 255, 255, 0.9);
+      font-size: 10px;
+      border: 1px solid rgba(0, 0, 0, 0.04);
+      background: rgba(255, 255, 255, 0.95);
       color: #3a3a3c;
-      max-width: 152px;
+      max-width: 140px;
       text-align: right;
     }
 
@@ -364,63 +389,121 @@
       font-weight: 600;
     }
 
-    .badge small {
-      display: block;
-      margin-top: 2px;
-      color: var(--text-muted);
-      font-size: 10px;
-    }
-
     .product-img-wrap {
-      margin-top: 6px;
+      margin-top: 4px;
       display: flex;
       justify-content: center;
-      padding: 12px 6px 8px;
+      padding: 10px 4px 4px;
     }
 
     .product-img {
       width: 100%;
-      max-width: 260px;
+      max-width: 240px;
       border-radius: 22px;
       transform: rotate(-8deg);
-      box-shadow: 0 20px 38px rgba(0, 0, 0, 0.16);
+      box-shadow: 0 18px 32px rgba(0, 0, 0, 0.18);
     }
 
-    .feature-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 9px;
-      margin-top: 16px;
+    .feature-strip {
+      margin-top: 10px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
       font-size: 11px;
-    }
-
-    @media (max-width: 520px) {
-      .feature-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-    }
-
-    .feature-chip {
-      padding: 7px 9px;
-      border-radius: 14px;
-      border: 1px solid rgba(0, 0, 0, 0.06);
-      background: rgba(255, 255, 255, 0.9);
       color: var(--text-muted);
+    }
+
+    .feature-pill {
+      padding: 5px 8px;
+      border-radius: 14px;
+      background: rgba(255, 255, 255, 0.9);
+      border: 1px solid rgba(0, 0, 0, 0.04);
+    }
+
+    /* overlay for details */
+
+    .overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.35);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 20;
+    }
+
+    .overlay.open {
+      display: flex;
+    }
+
+    .overlay-panel {
+      background: #ffffff;
+      border-radius: 22px;
+      max-width: 480px;
+      width: calc(100% - 32px);
+      max-height: calc(100% - 80px);
+      padding: 18px 18px 16px;
+      box-shadow: 0 24px 50px rgba(0, 0, 0, 0.2);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .overlay-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+
+    .overlay-title {
+      font-size: 15px;
+      font-weight: 600;
+    }
+
+    .overlay-close {
+      border: none;
+      background: #f2f2f7;
+      border-radius: 999px;
+      width: 26px;
+      height: 26px;
+      cursor: pointer;
+      font-size: 15px;
       display: flex;
       align-items: center;
-      gap: 6px;
+      justify-content: center;
     }
 
-    .feature-chip span.icon {
+    .overlay-body {
       font-size: 13px;
-      color: var(--accent-blue);
+      color: #3a3a3c;
+      line-height: 1.55;
+      overflow: auto;
+      padding-right: 4px;
     }
 
-    .product-note {
-      margin-top: 10px;
-      font-size: 10px;
+    .overlay-body h3 {
+      font-size: 13px;
+      margin: 10px 0 4px;
+    }
+
+    .overlay-body p {
+      margin: 4px 0 8px;
+    }
+
+    .overlay-body ul {
+      margin: 4px 0 10px 18px;
+      padding: 0;
+    }
+
+    .overlay-body li {
+      margin-bottom: 4px;
+    }
+
+    .overlay-legal {
+      margin-top: 8px;
+      font-size: 11px;
       color: #a1a1a6;
-      line-height: 1.5;
     }
   </style>
 
@@ -433,10 +516,31 @@
       window.open(AMAZON_URL, "_blank", "noopener,noreferrer");
     }
 
+    function openOverlay() {
+      document.getElementById("detailsOverlay").classList.add("open");
+    }
+
+    function closeOverlay() {
+      document.getElementById("detailsOverlay").classList.remove("open");
+    }
+
     window.addEventListener("DOMContentLoaded", () => {
       document.querySelectorAll("[data-amazon-link]").forEach((el) => {
         el.addEventListener("click", goToAmazon);
       });
+      document.querySelectorAll("[data-open-details]").forEach((el) => {
+        el.addEventListener("click", openOverlay);
+      });
+      document
+        .getElementById("overlayClose")
+        .addEventListener("click", closeOverlay);
+      document
+        .getElementById("detailsOverlay")
+        .addEventListener("click", (event) => {
+          if (event.target.id === "detailsOverlay") {
+            closeOverlay();
+          }
+        });
     });
   </script>
 </head>
@@ -451,13 +555,11 @@
           </div>
 
           <h1>
-            Portable Bluetooth party speaker with deep sound and lights
+            Bluetooth speaker for everyday music and moments
           </h1>
 
           <p class="subtitle">
-            A compact speaker for everyday listening. Clear sound, gentle light
-            effects, and a design that fits pool side hangs, beach days, road
-            trips, or late evening game sessions.
+            Clear sound, subtle light, and a compact design ready for the pool side table, the kitchen counter, or a weekend trip.
           </p>
 
           <div class="meta-strip">
@@ -472,15 +574,9 @@
             <div class="meta-item">
               <div class="meta-bullet"></div>
               <span>
-                Water resistant design with
+                Water resistant body with
                 <span class="meta-highlight">IPX5</span>
-                rating for splashes and spills
-              </span>
-            </div>
-            <div class="meta-item">
-              <div class="meta-bullet"></div>
-              <span>
-                Bluetooth five point three connection for easy pairing with your phone or laptop
+                rating for splashes and light rain
               </span>
             </div>
           </div>
@@ -496,8 +592,17 @@
             </a>
 
             <button class="btn-secondary" type="button" data-amazon-link>
-              <span>See details and reviews</span>
+              <span>See reviews</span>
               <span>↗</span>
+            </button>
+          </div>
+
+          <div class="meta-links">
+            <button class="meta-link" type="button" data-open-details>
+              Why we like this
+            </button>
+            <button class="meta-link" type="button" data-open-details>
+              Specs and details
             </button>
           </div>
 
@@ -505,24 +610,12 @@
             <div class="as-seen">Sold on</div>
             <div class="amazon-row">
               <div class="amazon-pill"></div>
-              <div class="amazon-text">
-                Amazon.com · ships from Amazon
-              </div>
+              <div>Amazon.com · ships from Amazon</div>
             </div>
           </div>
 
-          <div class="bottom-strip">
-            <p>
-              <strong>Immersive stereo sound</strong>
-              from dual drivers with low distortion and the option to pair two
-              speakers for a wider soundstage.
-            </p>
-          </div>
-
-          <p class="legal">
-            As an Amazon Associate, Joyflip may earn from qualifying purchases
-            made through the links on this page. Always check the current price
-            and details on Amazon before ordering.
+          <p class="legal-inline">
+            As an Amazon Associate, Joyflip may earn from qualifying purchases made through links on this page.
           </p>
         </div>
 
@@ -532,12 +625,12 @@
               <div class="product-label">Joyflip edit</div>
               <div class="badge-stack">
                 <div class="badge">
-                  <strong>Versatile everyday speaker</strong>
-                  <small>For home, travel, or the pool side table</small>
+                  <strong>Versatile speaker</strong>
+                  For home, travel, or the pool side table
                 </div>
                 <div class="badge">
                   <strong>Easy to carry</strong>
-                  <small>Drop in a bag, charge and go</small>
+                  Drop in a bag, charge and go
                 </div>
               </div>
             </div>
@@ -551,43 +644,59 @@
               />
             </div>
 
-            <div class="feature-grid">
-              <div class="feature-chip">
-                <span class="icon">💧</span>
-                <span>IPX5 rated for water splashes</span>
-              </div>
-              <div class="feature-chip">
-                <span class="icon">🎧</span>
-                <span>Pair two speakers for stereo</span>
-              </div>
-              <div class="feature-chip">
-                <span class="icon">🔋</span>
-                <span>Long play time per charge</span>
-              </div>
-              <div class="feature-chip">
-                <span class="icon">🎵</span>
-                <span>Lights that complement the music</span>
-              </div>
-              <div class="feature-chip">
-                <span class="icon">📱</span>
-                <span>Bluetooth five point three connection</span>
-              </div>
-              <div class="feature-chip">
-                <span class="icon">📞</span>
-                <span>Built in mic for calls when needed</span>
-              </div>
+            <div class="feature-strip">
+              <div class="feature-pill">IPX5 water resistance</div>
+              <div class="feature-pill">Pair two for stereo</div>
+              <div class="feature-pill">Long play time</div>
+              <div class="feature-pill">Bluetooth five point three</div>
             </div>
-
-            <p class="product-note">
-              Product details such as water resistance, play time, and wireless
-              range are based on the manufacturer information for model C27C.
-              Actual performance can vary with volume level, content type, and
-              usage.
-            </p>
           </div>
         </div>
       </div>
     </section>
   </main>
+
+  <!-- details overlay -->
+  <div class="overlay" id="detailsOverlay" aria-hidden="true">
+    <div class="overlay-panel">
+      <div class="overlay-header">
+        <div class="overlay-title">About this speaker</div>
+        <button class="overlay-close" id="overlayClose" aria-label="Close details">
+          ✕
+        </button>
+      </div>
+      <div class="overlay-body">
+        <h3>Listening experience</h3>
+        <p>
+          Dual drivers give a clear and full sound for podcasts, playlists, and background music.
+          You can also pair a second unit for a wider stereo field when you want more presence.
+        </p>
+
+        <h3>Built to move around</h3>
+        <ul>
+          <li>Compact enough to sit on a desk, nightstand, or pool side table.</li>
+          <li>Rated IPX5, so splashes and light rain are fine. Submerging it is not recommended.</li>
+          <li>Battery is rated for long play time at moderate volume; very loud listening will shorten it.</li>
+        </ul>
+
+        <h3>Connection</h3>
+        <p>
+          Bluetooth five point three supports a stable wireless link with most phones, tablets, and laptops.
+          There is also a built in microphone so you can take calls without picking up your phone.
+        </p>
+
+        <h3>Good to know</h3>
+        <p>
+          Exact battery life, range, and durability depend on volume level, content, and how you use it.
+          For the most accurate and current information, always check the product page on Amazon.
+        </p>
+
+        <p class="overlay-legal">
+          Product details are summarized from the manufacturer information for model C27C.
+          As an Amazon Associate, Joyflip may earn from qualifying purchases made through links on this page.
+        </p>
+      </div>
+    </div>
+  </div>
 </body>
 </html>
