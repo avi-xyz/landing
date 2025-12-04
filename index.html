@@ -2,17 +2,18 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Joyflip · Bluetooth Party Speaker</title>
+  <title>Portable Bluetooth Speaker – Long Battery Life, IPX5 Waterproof | Joyflip Picks</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta
     name="description"
-    content="Portable Bluetooth speaker with clear sound, long play time, and water resistance. Curated by Joyflip."
+    content="Compact portable Bluetooth speaker with deep sound, long battery life, IPX5 waterproof rating, and Bluetooth 5.3. Hand picked by Joyflip."
   />
 
-  <meta property="og:title" content="Joyflip · Portable Bluetooth Party Speaker" />
+  <!-- Open Graph for sharing -->
+  <meta property="og:title" content="Joyflip · Portable Bluetooth Speaker" />
   <meta
     property="og:description"
-    content="Compact speaker with immersive sound, water resistance, and long play time, hand picked by Joyflip."
+    content="Compact speaker with immersive sound, water resistance, and long play time, selected by Joyflip."
   />
   <meta
     property="og:image"
@@ -20,6 +21,24 @@
   />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://joyflip.com" />
+
+  <!-- Optional favicon (add favicon.png to your repo root) -->
+  <link rel="icon" type="image/png" href="favicon.png" />
+
+  <!-- Basic product structured data for SEO -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "Portable Bluetooth Speaker",
+    "image": "https://m.media-amazon.com/images/I/81l7mB5LhsL._AC_SY300_SX300_QL70_ML2_.jpg",
+    "description": "Portable Bluetooth speaker with deep sound, long battery life, IPX5 waterproof rating, and Bluetooth 5.3.",
+    "brand": {
+      "@type": "Brand",
+      "name": "Joyflip Picks"
+    }
+  }
+  </script>
 
   <style>
     :root {
@@ -48,25 +67,25 @@
       color: var(--text-main);
       min-height: 100vh;
       background: radial-gradient(circle at top, #ffffff 0, #f5f5f7 38%, #e5e5ea 100%);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 16px;
     }
 
     .page {
+      min-height: 100vh;
       width: 100%;
-      max-width: 960px;
+      display: flex;
+      align-items: stretch;
+      justify-content: center;
     }
 
     .card {
       background: var(--card-bg);
-      border-radius: var(--radius-card);
-      padding: 24px 26px;
-      border: 1px solid var(--card-border);
-      box-shadow: var(--shadow-soft);
+      border-radius: 0;
+      padding: 20px 18px;
+      border: none;
+      box-shadow: none;
       position: relative;
       overflow: hidden;
+      flex: 1;
     }
 
     .card::before {
@@ -82,43 +101,41 @@
     .card-inner {
       position: relative;
       z-index: 1;
-      display: grid;
-      grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
-      gap: 32px;
-      align-items: center;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      height: 100%;
     }
 
-    @media (max-width: 840px) {
-      .card-inner {
-        grid-template-columns: minmax(0, 1fr);
-      }
-    }
-
-    /* MOBILE: compress layout, no scroll on tall phones */
-    @media (max-width: 520px) {
+    @media (min-width: 900px) {
       body {
-        padding: 8px;
-        align-items: stretch;
+        padding: 24px;
+      }
+
+      .page {
+        max-width: 960px;
+        margin: 0 auto;
       }
 
       .card {
-        padding: 18px 16px;
-        border-radius: 24px;
+        border-radius: var(--radius-card);
+        padding: 24px 26px;
+        border: 1px solid var(--card-border);
+        box-shadow: var(--shadow-soft);
       }
 
       .card-inner {
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
+        display: grid;
+        grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+        gap: 32px;
+        align-items: center;
       }
+    }
 
-      .left {
-        width: 100%;
-      }
-
-      .right {
-        display: none; /* hide big Joyflip edit block on mobile */
-      }
+    .left {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
     }
 
     .pill {
@@ -132,6 +149,7 @@
       text-transform: uppercase;
       color: var(--accent-blue);
       background: var(--accent-blue-soft);
+      align-self: flex-start;
     }
 
     .pill-dot {
@@ -142,7 +160,7 @@
     }
 
     h1 {
-      margin: 16px 0 8px;
+      margin: 10px 0 6px;
       font-size: clamp(24px, 3.4vw, 32px);
       line-height: 1.18;
       letter-spacing: -0.03em;
@@ -156,11 +174,11 @@
       line-height: 1.5;
     }
 
-    /* HERO IMAGE (mobile only) */
+    /* HERO IMAGE (mobile by default) */
+
     .hero-image {
       margin-top: 10px;
       margin-bottom: 6px;
-      display: none;
     }
 
     .hero-image-inner {
@@ -180,14 +198,14 @@
       box-shadow: 0 16px 30px rgba(0, 0, 0, 0.16);
     }
 
-    @media (max-width: 520px) {
+    @media (min-width: 900px) {
       .hero-image {
-        display: block;
+        display: none;
       }
     }
 
     .meta-strip {
-      margin: 10px 0 14px;
+      margin: 8px 0 10px;
       display: flex;
       flex-direction: column;
       gap: 8px;
@@ -234,7 +252,7 @@
       flex-wrap: wrap;
       align-items: center;
       gap: 10px;
-      margin-bottom: 10px;
+      margin-bottom: 8px;
     }
 
     .btn-primary {
@@ -305,7 +323,7 @@
       display: flex;
       flex-wrap: wrap;
       gap: 8px;
-      margin-bottom: 8px;
+      margin-bottom: 6px;
     }
 
     .meta-link {
@@ -363,8 +381,15 @@
     }
 
     /* DESKTOP / TABLET side panel */
+
     .right {
-      position: relative;
+      display: none;
+    }
+
+    @media (min-width: 900px) {
+      .right {
+        display: block;
+      }
     }
 
     .product-card {
@@ -447,7 +472,7 @@
       border: 1px solid rgba(0, 0, 0, 0.04);
     }
 
-    /* details overlay */
+    /* Details overlay */
 
     .overlay {
       position: fixed;
@@ -585,7 +610,7 @@
             Clear sound, subtle light, and a compact design ready for the pool side table, the kitchen counter, or a weekend trip.
           </p>
 
-          <!-- mobile hero image -->
+          <!-- hero image (mobile / small screens) -->
           <div class="hero-image">
             <div class="hero-image-inner">
               <img
@@ -654,7 +679,7 @@
           </p>
         </div>
 
-        <!-- big side panel for larger screens only -->
+        <!-- right side: only on larger screens -->
         <div class="right">
           <div class="product-card">
             <div class="product-headline">
