@@ -22,7 +22,7 @@
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://joyflip.com" />
 
-  <!-- Optional favicon (add favicon.png to your repo root) -->
+  <!-- Favicon: add favicon.png to your repo root -->
   <link rel="icon" type="image/png" href="favicon.png" />
 
   <!-- Basic product structured data for SEO -->
@@ -50,8 +50,6 @@
       --accent-green: #34c759;
       --text-main: #1d1d1f;
       --text-muted: #86868b;
-      --shadow-soft: 0 18px 40px rgba(0, 0, 0, 0.08);
-      --radius-card: 32px;
       --radius-pill: 999px;
       --transition-fast: 160ms ease-out;
     }
@@ -69,23 +67,26 @@
       background: radial-gradient(circle at top, #ffffff 0, #f5f5f7 38%, #e5e5ea 100%);
     }
 
+    /* Full viewport container */
     .page {
       min-height: 100vh;
       width: 100%;
       display: flex;
       align-items: stretch;
       justify-content: center;
+      background: transparent;
     }
 
+    /* Full-bleed white surface */
     .card {
       background: var(--card-bg);
       border-radius: 0;
-      padding: 20px 18px;
       border: none;
       box-shadow: none;
       position: relative;
       overflow: hidden;
       flex: 1;
+      display: flex;
     }
 
     .card::before {
@@ -98,36 +99,25 @@
       z-index: 0;
     }
 
+    /* Inner layout is constrained but the white surface fills the port */
     .card-inner {
       position: relative;
       z-index: 1;
+      padding: 20px 18px 18px;
       display: flex;
       flex-direction: column;
       gap: 10px;
-      height: 100%;
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
     }
 
     @media (min-width: 900px) {
-      body {
-        padding: 24px;
-      }
-
-      .page {
-        max-width: 960px;
-        margin: 0 auto;
-      }
-
-      .card {
-        border-radius: var(--radius-card);
-        padding: 24px 26px;
-        border: 1px solid var(--card-border);
-        box-shadow: var(--shadow-soft);
-      }
-
       .card-inner {
+        padding: 32px 40px 32px;
         display: grid;
         grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
-        gap: 32px;
+        gap: 40px;
         align-items: center;
       }
     }
@@ -174,8 +164,7 @@
       line-height: 1.5;
     }
 
-    /* HERO IMAGE (mobile by default) */
-
+    /* Hero image */
     .hero-image {
       margin-top: 10px;
       margin-bottom: 6px;
@@ -192,7 +181,7 @@
 
     .hero-img {
       width: 100%;
-      max-width: 220px;
+      max-width: 260px;
       border-radius: 20px;
       transform: rotate(-8deg);
       box-shadow: 0 16px 30px rgba(0, 0, 0, 0.16);
@@ -380,8 +369,7 @@
       max-width: 460px;
     }
 
-    /* DESKTOP / TABLET side panel */
-
+    /* Right column only on large screens */
     .right {
       display: none;
     }
@@ -396,7 +384,7 @@
       border-radius: 26px;
       padding: 14px 14px 12px;
       background: linear-gradient(145deg, #ffffff, #f4f4f7);
-      border: 1px solid rgba(0, 0, 0, 0.06);
+      border: 1px solid var(--card-border);
       box-shadow: 0 16px 36px rgba(0, 0, 0, 0.06);
       overflow: hidden;
       position: relative;
@@ -610,7 +598,7 @@
             Clear sound, subtle light, and a compact design ready for the pool side table, the kitchen counter, or a weekend trip.
           </p>
 
-          <!-- hero image (mobile / small screens) -->
+          <!-- hero image (mobile / smaller widths) -->
           <div class="hero-image">
             <div class="hero-image-inner">
               <img
@@ -679,7 +667,6 @@
           </p>
         </div>
 
-        <!-- right side: only on larger screens -->
         <div class="right">
           <div class="product-card">
             <div class="product-headline">
