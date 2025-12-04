@@ -2,18 +2,17 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Joyflip Picks Bluetooth Party Speaker</title>
+  <title>Joyflip Picks · Bluetooth Party Speaker</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta
     name="description"
-    content="Portable Bluetooth speaker with immersive stereo sound, long play time, IPX5 water resistance, party lights, and true wireless pairing. Hand picked on Joyflip."
+    content="Portable Bluetooth speaker with immersive sound, long play time, water resistance, and subtle party lights. Curated by Joyflip."
   />
 
-  <!-- Social sharing -->
-  <meta property="og:title" content="Bluetooth Speaker With Immersive Sound And Party Lights" />
+  <meta property="og:title" content="Joyflip · Portable Bluetooth Party Speaker" />
   <meta
     property="og:description"
-    content="Portable speaker with deep sound, IPX5 water resistance, up to twenty hours of play time, and Bluetooth five point three."
+    content="Compact speaker with immersive sound, water resistance, and long play time, hand picked by Joyflip."
   />
   <meta
     property="og:image"
@@ -24,18 +23,17 @@
 
   <style>
     :root {
-      --bg-gradient: radial-gradient(circle at top left, #111827, #020617);
-      --card-bg: rgba(15, 23, 42, 0.96);
+      --bg: radial-gradient(circle at top, #020617 0, #020617 40, #000 100);
+      --card-bg: rgba(15, 23, 42, 0.98);
+      --card-border: rgba(148, 163, 184, 0.42);
       --accent: #22c55e;
-      --accent-soft: rgba(34, 197, 94, 0.16);
-      --accent-strong: rgba(34, 197, 94, 0.32);
+      --accent-soft: rgba(34, 197, 94, 0.12);
       --text-main: #f9fafb;
       --text-muted: #9ca3af;
-      --border-subtle: rgba(148, 163, 184, 0.35);
-      --shadow-strong: 0 30px 80px rgba(15, 23, 42, 0.9);
-      --radius-lg: 24px;
+      --shadow-strong: 0 26px 70px rgba(15, 23, 42, 0.95);
+      --radius-card: 26px;
       --radius-pill: 999px;
-      --transition-fast: 180ms ease-out;
+      --transition-fast: 160ms ease-out;
     }
 
     * {
@@ -48,38 +46,36 @@
         "Helvetica Neue", Arial, sans-serif;
       color: var(--text-main);
       min-height: 100vh;
-      background: var(--bg-gradient);
+      background: var(--bg);
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 16px;
+      padding: 18px;
     }
 
     .page {
-      width: 100%;
-      max-width: 1100px;
+      width: 100;
+      max-width: 1040px;
     }
 
     .card {
       background: var(--card-bg);
-      border-radius: 32px;
+      border-radius: var(--radius-card);
       padding: 24px;
-      border: 1px solid var(--border-subtle);
+      border: 1px solid var(--card-border);
       box-shadow: var(--shadow-strong);
       position: relative;
       overflow: hidden;
-      backdrop-filter: blur(26px);
     }
 
     .card::before {
       content: "";
       position: absolute;
-      inset: -40%;
+      inset: -25;
       background:
-        radial-gradient(circle at 0 0, rgba(56, 189, 248, 0.09), transparent 60%),
-        radial-gradient(circle at 100% 0, rgba(129, 140, 248, 0.10), transparent 55%),
-        radial-gradient(circle at 80% 80%, rgba(34, 197, 94, 0.15), transparent 55%);
-      opacity: 1;
+        radial-gradient(circle at 0 0, rgba(56, 189, 248, 0.10), transparent 60),
+        radial-gradient(circle at 100 0, rgba(34, 197, 94, 0.12), transparent 60);
+      opacity: 0.9;
       pointer-events: none;
       z-index: 0;
     }
@@ -88,7 +84,7 @@
       position: relative;
       z-index: 1;
       display: grid;
-      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
       gap: 32px;
       align-items: center;
     }
@@ -99,19 +95,26 @@
       }
     }
 
+    @media (max-width: 520px) {
+      .card {
+        padding: 18px 18px 22px;
+        border-radius: 22px;
+      }
+    }
+
     .pill {
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      padding: 4px 12px;
+      padding: 4px 13px;
       border-radius: var(--radius-pill);
-      font-size: 12px;
-      letter-spacing: 0.05em;
+      font-size: 11px;
+      letter-spacing: 0.08em;
       text-transform: uppercase;
-      color: var(--accent);
-      background: rgba(15, 118, 110, 0.45);
-      border: 1px solid rgba(45, 212, 191, 0.6);
-      backdrop-filter: blur(20px);
+      color: #bbf7d0;
+      background: rgba(21, 128, 61, 0.26);
+      border: 1px solid rgba(74, 222, 128, 0.7);
+      backdrop-filter: blur(16px);
     }
 
     .pill-dot {
@@ -119,13 +122,13 @@
       height: 7px;
       border-radius: 999px;
       background: var(--accent);
-      box-shadow: 0 0 0 6px var(--accent-strong);
+      box-shadow: 0 0 0 6px rgba(34, 197, 94, 0.28);
     }
 
     h1 {
-      margin: 14px 0 10px;
-      font-size: clamp(30px, 4vw, 40px);
-      line-height: 1.05;
+      margin: 16px 0 12px;
+      font-size: clamp(28px, 4vw, 38px);
+      line-height: 1.08;
       letter-spacing: -0.03em;
     }
 
@@ -137,29 +140,42 @@
     }
 
     .meta-strip {
+      margin: 20px 0 22px;
       display: flex;
-      flex-wrap: wrap;
-      gap: 14px;
-      margin: 20px 0 24px;
-      font-size: 13px;
-      color: var(--text-muted);
+      flex-direction: column;
+      gap: 10px;
     }
 
     .meta-item {
-      display: inline-flex;
+      display: grid;
+      grid-template-columns: auto 1fr;
       align-items: center;
-      gap: 8px;
-      padding: 6px 10px;
-      border-radius: var(--radius-pill);
-      border: 1px solid rgba(148, 163, 184, 0.4);
-      background: rgba(15, 23, 42, 0.8);
+      gap: 10px;
+      padding: 8px 12px;
+      border-radius: 18px;
+      background: rgba(15, 23, 42, 0.94);
+      border: 1px solid rgba(148, 163, 184, 0.34);
     }
 
-    .meta-dot {
-      width: 6px;
-      height: 6px;
+    .meta-bullet {
+      width: 10px;
+      height: 10px;
       border-radius: 999px;
-      background: rgba(248, 250, 252, 0.85);
+      border: 2px solid rgba(148, 163, 184, 0.8);
+      position: relative;
+    }
+
+    .meta-bullet::after {
+      content: "";
+      position: absolute;
+      inset: 2;
+      border-radius: inherit;
+      background: #e5e7eb;
+    }
+
+    .meta-item span {
+      font-size: 13px;
+      color: #e5e7eb;
     }
 
     .meta-highlight {
@@ -171,12 +187,11 @@
       display: flex;
       flex-wrap: wrap;
       align-items: center;
-      gap: 14px;
+      gap: 12px;
       margin-bottom: 22px;
     }
 
     .btn-primary {
-      position: relative;
       display: inline-flex;
       align-items: center;
       justify-content: center;
@@ -189,11 +204,10 @@
       cursor: pointer;
       font-weight: 600;
       font-size: 15px;
-      color: #020617;
+      color: #022c22;
       background: linear-gradient(135deg, #22c55e, #a3e635);
       box-shadow:
-        0 12px 35px rgba(22, 163, 74, 0.5),
-        0 0 0 1px rgba(190, 242, 100, 0.9);
+        0 16px 40px rgba(22, 163, 74, 0.55);
       transform: translateY(0);
       transition:
         transform var(--transition-fast),
@@ -207,18 +221,16 @@
     }
 
     .btn-primary:hover {
-      transform: translateY(-1px) scale(1.01);
-      filter: brightness(1.06);
+      transform: translateY(-1px);
+      filter: brightness(1.05);
       box-shadow:
-        0 18px 45px rgba(22, 163, 74, 0.7),
-        0 0 0 1px rgba(190, 242, 100, 0.95);
+        0 19px 50px rgba(22, 163, 74, 0.7);
     }
 
     .btn-primary:active {
-      transform: translateY(1px) scale(0.99);
+      transform: translateY(1px);
       box-shadow:
-        0 8px 25px rgba(22, 163, 74, 0.6),
-        0 0 0 1px rgba(190, 242, 100, 0.9);
+        0 9px 26px rgba(22, 163, 74, 0.6);
     }
 
     .btn-secondary {
@@ -227,8 +239,8 @@
       gap: 8px;
       padding: 11px 16px;
       border-radius: var(--radius-pill);
-      border: 1px solid rgba(148, 163, 184, 0.5);
-      background: rgba(15, 23, 42, 0.9);
+      border: 1px solid rgba(148, 163, 184, 0.55);
+      background: rgba(15, 23, 42, 0.96);
       color: var(--text-muted);
       text-decoration: none;
       font-size: 14px;
@@ -241,7 +253,7 @@
     }
 
     .btn-secondary:hover {
-      border-color: rgba(148, 163, 184, 0.9);
+      border-color: rgba(209, 213, 219, 0.95);
       background: rgba(15, 23, 42, 1);
       color: #e5e7eb;
       transform: translateY(-1px);
@@ -254,163 +266,145 @@
       color: var(--text-muted);
     }
 
-    .amazon-badge {
+    .amazon-row {
       display: inline-flex;
       align-items: center;
-      gap: 7px;
-      margin-top: 4px;
-      padding: 5px 9px;
-      border-radius: var(--radius-pill);
-      border: 1px solid rgba(249, 250, 251, 0.08);
-      background: rgba(15, 23, 42, 0.95);
+      gap: 9px;
+      padding: 6px 10px;
+      border-radius: 18px;
+      margin-top: 5px;
+      border: 1px solid rgba(31, 41, 55, 0.9);
+      background: rgba(15, 23, 42, 0.98);
     }
 
-    .amazon-logo {
-      width: 60px;
+    .amazon-pill {
+      width: 42px;
       height: 18px;
-      background:
-        linear-gradient(#f97316, #ea580c);
-      border-radius: 999px;
-      position: relative;
-      box-shadow: 0 0 0 1px rgba(248, 250, 252, 0.08);
-    }
-
-    .amazon-logo::before,
-    .amazon-logo::after {
-      content: "";
-      position: absolute;
-    }
-
-    .amazon-logo::before {
-      inset: 4px 10px;
       border-radius: 999px;
       background: #111827;
+      border: 1px solid rgba(248, 250, 252, 0.12);
+      position: relative;
+      overflow: hidden;
     }
 
-    .amazon-logo::after {
-      left: 12px;
-      right: 12px;
-      bottom: 5px;
-      border-radius: 999px;
-      border-bottom: 2px solid #facc15;
-      transform: rotate(-2deg);
+    .amazon-pill::before {
+      content: "";
+      position: absolute;
+      inset: 3 8;
+      border-radius: inherit;
+      background: linear-gradient(90deg, #f97316, #facc15);
     }
 
     .amazon-text {
       font-size: 11px;
       color: #e5e7eb;
-      opacity: 0.86;
     }
 
-    /* right column */
+    .bottom-strip {
+      margin-top: 14px;
+      padding-top: 12px;
+      border-top: 1px solid rgba(31, 41, 55, 1);
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+
+    .bottom-strip strong {
+      color: #e5e7eb;
+    }
+
+    .legal {
+      margin-top: 8px;
+      font-size: 10px;
+      color: rgba(148, 163, 184, 0.88);
+      line-height: 1.5;
+    }
 
     .right {
       position: relative;
     }
 
-    .speaker-orbit {
-      position: relative;
-      border-radius: 40px;
-      padding: 18px;
+    .product-card {
+      border-radius: 24px;
+      padding: 16px 16px 14px;
       background:
-        radial-gradient(circle at 0 0, rgba(56, 189, 248, 0.16), transparent 55%),
-        radial-gradient(circle at 100% 100%, rgba(129, 140, 248, 0.18), transparent 60%),
-        radial-gradient(circle at 50% 100%, rgba(34, 197, 94, 0.3), transparent 60%),
-        rgba(15, 23, 42, 0.95);
-      border: 1px solid rgba(148, 163, 184, 0.65);
+        radial-gradient(circle at top left, rgba(56, 189, 248, 0.16), transparent 65),
+        radial-gradient(circle at bottom right, rgba(34, 197, 94, 0.22), transparent 60),
+        rgba(15, 23, 42, 0.98);
+      border: 1px solid rgba(148, 163, 184, 0.6);
       box-shadow:
-        0 25px 60px rgba(15, 23, 42, 0.9),
-        0 0 0 1px rgba(15, 23, 42, 0.9);
+        0 24px 60px rgba(15, 23, 42, 0.95);
       overflow: hidden;
-    }
-
-    .speaker-orbit::before {
-      content: "";
-      position: absolute;
-      inset: 22%;
-      border-radius: 999px;
-      border: 1px dashed rgba(148, 163, 184, 0.35);
-      opacity: 0.7;
-    }
-
-    .speaker-orbit::after {
-      content: "";
-      position: absolute;
-      inset: 40%;
-      border-radius: 999px;
-      border: 1px dashed rgba(56, 189, 248, 0.4);
-      opacity: 0.65;
-    }
-
-    .speaker-glow {
-      position: absolute;
-      inset: 12%;
-      border-radius: 999px;
-      background:
-        radial-gradient(circle at 30% 20%, rgba(59, 130, 246, 0.4), transparent 60%),
-        radial-gradient(circle at 70% 80%, rgba(34, 197, 94, 0.5), transparent 60%);
-      mix-blend-mode: screen;
-      opacity: 0.85;
-      pointer-events: none;
-    }
-
-    .speaker-img-wrap {
       position: relative;
-      z-index: 1;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 10px;
     }
 
-    .speaker-img {
-      width: 100%;
-      max-width: 270px;
-      border-radius: 32px;
-      transform: rotate(-10deg) translateY(6px);
-      box-shadow:
-        0 25px 70px rgba(15, 23, 42, 1),
-        0 0 0 1px rgba(15, 23, 42, 0.9);
+    .product-headline {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 10px;
     }
 
     .badge-stack {
-      position: absolute;
-      right: 16px;
-      top: 16px;
       display: flex;
       flex-direction: column;
-      gap: 8px;
-      z-index: 2;
+      gap: 6px;
+      align-items: flex-end;
     }
 
     .badge {
       padding: 6px 10px;
       border-radius: 16px;
       font-size: 11px;
-      border: 1px solid rgba(248, 250, 252, 0.12);
+      border: 1px solid rgba(248, 250, 251, 0.14);
       background: rgba(15, 23, 42, 0.96);
       color: #e5e7eb;
-      backdrop-filter: blur(16px);
-      max-width: 160px;
+      backdrop-filter: blur(14px);
+      max-width: 150px;
+      text-align: right;
     }
 
     .badge strong {
+      display: block;
       color: var(--accent);
       font-weight: 600;
     }
 
     .badge small {
       display: block;
-      margin-top: 1px;
+      margin-top: 2px;
       color: var(--text-muted);
       font-size: 10px;
+    }
+
+    .product-label {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: rgba(209, 213, 219, 0.9);
+      align-self: center;
+    }
+
+    .product-img-wrap {
+      margin-top: 4px;
+      display: flex;
+      justify-content: center;
+      padding: 10px 6px 6px;
+    }
+
+    .product-img {
+      width: 100;
+      max-width: 260px;
+      border-radius: 22px;
+      transform: rotate(-9deg);
+      box-shadow:
+        0 24px 60px rgba(15, 23, 42, 1);
     }
 
     .feature-grid {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 10px;
-      margin-top: 18px;
+      gap: 9px;
+      margin-top: 16px;
       font-size: 11px;
     }
 
@@ -423,8 +417,8 @@
     .feature-chip {
       padding: 7px 9px;
       border-radius: 14px;
-      border: 1px solid rgba(148, 163, 184, 0.5);
-      background: rgba(15, 23, 42, 0.95);
+      border: 1px solid rgba(148, 163, 184, 0.45);
+      background: rgba(15, 23, 42, 0.96);
       color: var(--text-muted);
       display: flex;
       align-items: center;
@@ -435,33 +429,15 @@
       font-size: 13px;
     }
 
-    /* bottom info strip */
-
-    .bottom-strip {
+    .product-note {
       margin-top: 10px;
-      padding-top: 14px;
-      border-top: 1px solid rgba(31, 41, 55, 1);
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      font-size: 12px;
-      color: var(--text-muted);
-    }
-
-    .bottom-strip strong {
-      color: #e5e7eb;
-    }
-
-    .legal {
-      margin-top: 8px;
       font-size: 10px;
-      color: rgba(148, 163, 184, 0.8);
+      color: rgba(148, 163, 184, 0.88);
       line-height: 1.5;
     }
   </style>
 
   <script>
-    // helper to keep Amazon links in one place
     const AMAZON_URL =
       "https://www.amazon.com/Bluetooth-Waterproof-Playtime-Portable-Electronic/dp/B0BRKPVZB4/?tag=joyflip-20";
 
@@ -481,7 +457,6 @@
   <main class="page">
     <section class="card">
       <div class="card-inner">
-        <!-- left column -->
         <div class="left">
           <div class="pill">
             <span class="pill-dot"></span>
@@ -493,15 +468,14 @@
           </h1>
 
           <p class="subtitle">
-            Take your music anywhere. This compact but powerful speaker delivers
-            immersive stereo sound, vibrant light effects, and a design that is
-            ready for pool side hangs, beach days, road trips, or late night
-            game sessions.
+            Take your music anywhere. This compact speaker delivers immersive
+            sound, gentle light effects, and a design that fits pool side hangs,
+            beach days, road trips, or late night game sessions.
           </p>
 
           <div class="meta-strip">
             <div class="meta-item">
-              <span class="meta-dot"></span>
+              <div class="meta-bullet"></div>
               <span>
                 Up to
                 <span class="meta-highlight">twenty hours</span>
@@ -509,17 +483,18 @@
               </span>
             </div>
             <div class="meta-item">
-              <span class="meta-dot"></span>
+              <div class="meta-bullet"></div>
               <span>
-                IPX5 water protection for splashes and spills
+                Water resistant design with
+                <span class="meta-highlight">IPX5</span>
+                rating for splashes and spills
               </span>
             </div>
             <div class="meta-item">
-              <span class="meta-dot"></span>
+              <div class="meta-bullet"></div>
               <span>
-                Bluetooth five point three with about
-                <span class="meta-highlight">ten meter</span>
-                range
+                Bluetooth five point three wireless connection with an easy
+                pairing experience
               </span>
             </div>
           </div>
@@ -535,29 +510,27 @@
             </a>
 
             <button class="btn-secondary" type="button" data-amazon-link>
-              <span>See full details and reviews</span>
+              <span>See details and reviews</span>
               <span>↗</span>
             </button>
           </div>
 
           <div>
             <div class="as-seen">Sold on</div>
-            <div class="amazon-badge">
-              <div class="amazon-logo"></div>
+            <div class="amazon-row">
+              <div class="amazon-pill"></div>
               <div class="amazon-text">
-                Amazon dot com · Ships from Amazon
+                Ships from Amazon
               </div>
             </div>
           </div>
 
           <div class="bottom-strip">
-            <div>
+            <p>
               <strong>Immersive stereo sound</strong>
-              with dual drivers and low distortion
-            </div>
-            <div>
-              Pair two speakers for a true wireless stereo experience
-            </div>
+              from dual drivers with low distortion and the option to pair two
+              speakers together for a wider soundstage.
+            </p>
           </div>
 
           <p class="legal">
@@ -567,27 +540,27 @@
           </p>
         </div>
 
-        <!-- right column -->
         <div class="right">
-          <div class="speaker-orbit">
-            <div class="speaker-glow"></div>
-
-            <div class="badge-stack">
-              <div class="badge">
-                <strong>Ten thousand plus</strong>
-                <small>buyers in the past month on Amazon</small>
-              </div>
-              <div class="badge">
-                <strong>Perfect for gifts</strong>
-                <small>stocking stuffers, white elephant, or travel</small>
+          <div class="product-card">
+            <div class="product-headline">
+              <div class="product-label">Joyflip edit</div>
+              <div class="badge-stack">
+                <div class="badge">
+                  <strong>Popular on Amazon</strong>
+                  <small>Widely bought for gifts and travel</small>
+                </div>
+                <div class="badge">
+                  <strong>Easy to carry</strong>
+                  <small>Throw in a bag for pool or beach days</small>
+                </div>
               </div>
             </div>
 
-            <div class="speaker-img-wrap">
+            <div class="product-img-wrap">
               <img
                 src="https://m.media-amazon.com/images/I/81l7mB5LhsL._AC_SY300_SX300_QL70_ML2_.jpg"
-                alt="Portable Bluetooth speaker with water splashes and colorful lights"
-                class="speaker-img"
+                alt="Portable Bluetooth speaker with water splashes and subtle lights"
+                class="product-img"
                 loading="lazy"
               />
             </div>
@@ -599,7 +572,7 @@
               </div>
               <div class="feature-chip">
                 <span class="icon">🎧</span>
-                <span>Pair two units for stereo sound</span>
+                <span>Pair two speakers for stereo sound</span>
               </div>
               <div class="feature-chip">
                 <span class="icon">🔋</span>
@@ -607,7 +580,7 @@
               </div>
               <div class="feature-chip">
                 <span class="icon">🎵</span>
-                <span>Lights sync with your music</span>
+                <span>Lights that complement your music</span>
               </div>
               <div class="feature-chip">
                 <span class="icon">📱</span>
@@ -615,17 +588,17 @@
               </div>
               <div class="feature-chip">
                 <span class="icon">📞</span>
-                <span>Built in mic for hands free calls</span>
+                <span>Built in mic for calls when needed</span>
               </div>
             </div>
-          </div>
 
-          <p class="legal">
-            Product details such as water resistance rating, play time, and
-            wireless range are based on the manufacturer information shown on
-            Amazon for model C27C. Features like actual battery life can vary
-            with volume level, content type, and usage.
-          </p>
+            <p class="product-note">
+              Product details such as water resistance, play time, and wireless
+              range are based on the manufacturer information for model C27C.
+              Actual performance can vary with volume level, content type, and
+              usage.
+            </p>
+          </div>
         </div>
       </div>
     </section>
