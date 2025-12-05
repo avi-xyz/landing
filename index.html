@@ -2,46 +2,43 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Portable Bluetooth Speaker – Long Battery Life, IPX5 Waterproof | Joyflip Picks</title>
+  <title>Adjustable Dumbbell Set 105 lb Pair for Home Gym | Joyflip Picks</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta
     name="description"
-    content="Compact portable Bluetooth speaker with deep sound, long battery life, IPX5 waterproof rating, and Bluetooth 5.3. Hand picked by Joyflip."
+    content="Yes4All adjustable dumbbell set up to a total of 105 pounds. Compact cast iron pair for home gym lifters who want serious strength training without a full rack."
   />
-  <!-- Cloudflare Web Analytics -->
-  <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "ad3efa54621146f694971c7ed698eda6"}'>  
-  </script>
-  <!-- End Cloudflare Web Analytics -->
-  
-  <!-- Open Graph for sharing -->
-  <meta property="og:title" content="Joyflip · Portable Bluetooth Speaker" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Yes4All Adjustable Dumbbell Set 105 lb Pair | Joyflip" />
   <meta
     property="og:description"
-    content="Compact speaker with immersive sound, water resistance, and long play time, selected by Joyflip."
+    content="Heavy cast iron adjustable dumbbell pair for home gym strength training. Spins on and off in seconds so you can keep your session moving."
   />
+  <!-- Replace with your actual product image URL from Amazon -->
   <meta
     property="og:image"
-    content="https://m.media-amazon.com/images/I/81l7mB5LhsL._AC_SY300_SX300_QL70_ML2_.jpg"
+    content="https://m.media-amazon.com/images/I/81FO6JqHFEL._AC_SL1500_.jpg"
   />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://joyflip.com" />
 
-  
-  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
-  <link rel="icon" type="image/png" sizes="64x64" href="favicon-64.png">
-  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <!-- Favicon hooks (if you already added these, keep your existing ones) -->
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="64x64" href="favicon-64.png" />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
 
-  <!-- Basic product structured data for SEO -->
+  <!-- Product structured data for search -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "Product",
-    "name": "Portable Bluetooth Speaker",
-    "image": "https://m.media-amazon.com/images/I/81l7mB5LhsL._AC_SY300_SX300_QL70_ML2_.jpg",
-    "description": "Portable Bluetooth speaker with deep sound, long battery life, IPX5 waterproof rating, and Bluetooth 5.3.",
+    "name": "Yes4All Adjustable Dumbbell Set 105 lb Pair",
+    "image": "https://m.media-amazon.com/images/I/81FO6JqHFEL._AC_SL1500_.jpg",
+    "description": "Adjustable cast iron dumbbell pair up to a total of 105 pounds. Compact home gym strength training solution with spin lock collars and knurled handles.",
     "brand": {
       "@type": "Brand",
-      "name": "Joyflip Picks"
+      "name": "Yes4All"
     }
   }
   </script>
@@ -49,15 +46,17 @@
   <style>
     :root {
       --bg: #f5f5f7;
-      --card-bg: #ffffff;
-      --card-border: rgba(0, 0, 0, 0.06);
-      --accent-blue: #007aff;
-      --accent-blue-soft: rgba(0, 122, 255, 0.08);
-      --accent-green: #34c759;
-      --text-main: #1d1d1f;
-      --text-muted: #86868b;
+      --surface: #ffffff;
+      --border-subtle: rgba(0, 0, 0, 0.06);
+      --accent-strong: #0f766e;
+      --accent-soft: rgba(15, 118, 110, 0.09);
+      --accent-cta: #22c55e;
+      --text-main: #111827;
+      --text-muted: #6b7280;
+      --text-soft: #9ca3af;
       --radius-pill: 999px;
-      --transition-fast: 160ms ease-out;
+      --shadow-soft: 0 18px 38px rgba(0, 0, 0, 0.12);
+      --transition-fast: 150ms ease-out;
     }
 
     * {
@@ -69,57 +68,50 @@
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text",
         "Helvetica Neue", Arial, sans-serif;
       color: var(--text-main);
+      background: radial-gradient(circle at top, #ffffff 0, #f5f5f7 35%, #e5e7eb 100%);
       min-height: 100vh;
-      background: radial-gradient(circle at top, #ffffff 0, #f5f5f7 38%, #e5e5ea 100%);
     }
 
-    /* Full viewport container */
-    .page {
+    main.page {
       min-height: 100vh;
       width: 100%;
       display: flex;
       align-items: stretch;
       justify-content: center;
-      background: transparent;
     }
 
-    /* Full-bleed white surface */
-    .card {
-      background: var(--card-bg);
-      border-radius: 0;
-      border: none;
-      box-shadow: none;
+    .frame {
+      flex: 1;
+      background: var(--surface);
       position: relative;
       overflow: hidden;
-      flex: 1;
       display: flex;
     }
 
-    .card::before {
+    .frame::before {
       content: "";
       position: absolute;
-      inset: -120px -140px auto auto;
+      inset: -120px -260px auto auto;
       background:
-        radial-gradient(circle at top, rgba(0, 122, 255, 0.12), transparent 60%);
+        radial-gradient(circle at top, rgba(15, 118, 110, 0.14), transparent 60%);
       pointer-events: none;
       z-index: 0;
     }
 
-    /* Inner layout is constrained but the white surface fills the port */
-    .card-inner {
+    .layout {
       position: relative;
       z-index: 1;
-      padding: 20px 18px 18px;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
       width: 100%;
       max-width: 1200px;
       margin: 0 auto;
+      padding: 22px 18px 22px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
     }
 
     @media (min-width: 900px) {
-      .card-inner {
+      .layout {
         padding: 32px 40px 32px;
         display: grid;
         grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
@@ -131,34 +123,34 @@
     .left {
       display: flex;
       flex-direction: column;
-      gap: 8px;
+      gap: 10px;
     }
 
-    .pill {
+    .badge {
+      align-self: flex-start;
+      padding: 6px 14px;
+      border-radius: var(--radius-pill);
+      background: var(--accent-soft);
+      color: var(--accent-strong);
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      padding: 5px 14px;
-      border-radius: var(--radius-pill);
       font-size: 11px;
       letter-spacing: 0.12em;
       text-transform: uppercase;
-      color: var(--accent-blue);
-      background: var(--accent-blue-soft);
-      align-self: flex-start;
     }
 
-    .pill-dot {
-      width: 7px;
-      height: 7px;
+    .badge-dot {
+      width: 8px;
+      height: 8px;
       border-radius: 999px;
-      background: var(--accent-blue);
+      background: var(--accent-strong);
     }
 
     h1 {
-      margin: 10px 0 6px;
+      margin: 8px 0 6px;
       font-size: clamp(24px, 3.4vw, 32px);
-      line-height: 1.18;
+      line-height: 1.12;
       letter-spacing: -0.03em;
       font-weight: 650;
     }
@@ -166,54 +158,56 @@
     .subtitle {
       font-size: 14px;
       color: var(--text-muted);
-      max-width: 480px;
-      line-height: 1.5;
+      max-width: 520px;
+      line-height: 1.6;
     }
 
-    /* Hero image */
-    .hero-image {
+    /* hero image for mobile and narrow widths */
+
+    .hero-mobile {
       margin-top: 10px;
       margin-bottom: 6px;
     }
 
-    .hero-image-inner {
-      border-radius: 22px;
-      background: linear-gradient(145deg, #ffffff, #f4f4f7);
-      box-shadow: 0 18px 34px rgba(0, 0, 0, 0.08);
-      padding: 10px 10px 6px;
+    .hero-mobile-inner {
+      border-radius: 24px;
+      background: radial-gradient(circle at top left, #f5f5f7 0, #e5e7eb 70%);
+      box-shadow: var(--shadow-soft);
+      padding: 12px;
       display: flex;
       justify-content: center;
     }
 
-    .hero-img {
+    .hero-mobile img {
       width: 100%;
       max-width: 260px;
       border-radius: 20px;
-      transform: rotate(-8deg);
-      box-shadow: 0 16px 30px rgba(0, 0, 0, 0.16);
+      transform: rotate(-10deg);
+      box-shadow: 0 18px 32px rgba(0, 0, 0, 0.2);
+      object-fit: cover;
     }
 
     @media (min-width: 900px) {
-      .hero-image {
+      .hero-mobile {
         display: none;
       }
     }
 
     .meta-strip {
-      margin: 8px 0 10px;
       display: flex;
       flex-direction: column;
       gap: 8px;
+      margin: 8px 0 10px;
     }
 
-    .meta-item {
+    .meta-row {
       display: grid;
       grid-template-columns: auto 1fr;
-      align-items: center;
       gap: 8px;
+      align-items: center;
       padding: 8px 12px;
       border-radius: 18px;
-      background: #f9f9fb;
+      background: #f9fafb;
     }
 
     .meta-bullet {
@@ -229,25 +223,25 @@
       position: absolute;
       inset: 2px;
       border-radius: inherit;
-      background: rgba(0, 0, 0, 0.7);
+      background: rgba(0, 0, 0, 0.8);
     }
 
-    .meta-item span {
+    .meta-label {
       font-size: 13px;
-      color: #3a3a3c;
+      color: #374151;
     }
 
-    .meta-highlight {
-      color: var(--accent-blue);
+    .meta-strong {
+      color: var(--accent-strong);
       font-weight: 600;
     }
 
-    .actions {
+    .cta-row {
+      margin-top: 4px;
       display: flex;
       flex-wrap: wrap;
       align-items: center;
       gap: 10px;
-      margin-bottom: 8px;
     }
 
     .btn-primary {
@@ -255,17 +249,16 @@
       align-items: center;
       justify-content: center;
       gap: 8px;
-      padding: 10px 20px;
+      padding: 11px 22px;
       border-radius: var(--radius-pill);
       border: 1px solid rgba(0, 0, 0, 0.02);
-      outline: none;
-      text-decoration: none;
-      cursor: pointer;
+      background: linear-gradient(135deg, var(--accent-cta), #4ade80);
+      color: #ffffff;
       font-weight: 600;
       font-size: 14px;
-      color: #ffffff;
-      background: linear-gradient(135deg, var(--accent-green), #4cd964);
-      box-shadow: 0 10px 24px rgba(52, 199, 89, 0.42);
+      text-decoration: none;
+      cursor: pointer;
+      box-shadow: 0 14px 30px rgba(34, 197, 94, 0.5);
       transform: translateY(0);
       transition:
         transform var(--transition-fast),
@@ -280,12 +273,12 @@
     .btn-primary:hover {
       transform: translateY(-1px);
       filter: brightness(1.03);
-      box-shadow: 0 14px 30px rgba(52, 199, 89, 0.5);
+      box-shadow: 0 18px 36px rgba(34, 197, 94, 0.6);
     }
 
     .btn-primary:active {
       transform: translateY(1px);
-      box-shadow: 0 7px 18px rgba(52, 199, 89, 0.35);
+      box-shadow: 0 10px 22px rgba(34, 197, 94, 0.4);
     }
 
     .btn-secondary {
@@ -296,10 +289,10 @@
       border-radius: var(--radius-pill);
       border: 1px solid rgba(0, 0, 0, 0.08);
       background: #ffffff;
-      color: #3a3a3c;
-      text-decoration: none;
+      color: #374151;
       font-size: 12px;
       cursor: pointer;
+      text-decoration: none;
       transition:
         border-color var(--transition-fast),
         background var(--transition-fast),
@@ -308,51 +301,52 @@
     }
 
     .btn-secondary:hover {
-      border-color: rgba(0, 0, 0, 0.18);
-      background: #f9f9fb;
-      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05);
+      border-color: rgba(0, 0, 0, 0.16);
+      background: #f9fafb;
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.07);
       transform: translateY(-1px);
     }
 
-    .meta-links {
+    .links-row {
+      margin-top: 6px;
       display: flex;
       flex-wrap: wrap;
-      gap: 8px;
-      margin-bottom: 6px;
+      gap: 10px;
     }
 
-    .meta-link {
+    .text-link {
       border: none;
       background: transparent;
-      color: var(--accent-blue);
+      color: var(--accent-strong);
       font-size: 12px;
       padding: 0;
       text-decoration: underline;
       cursor: pointer;
     }
 
-    .as-seen {
+    .store-strip {
+      margin-top: 10px;
       font-size: 10px;
       text-transform: uppercase;
       letter-spacing: 0.16em;
-      color: var(--text-muted);
+      color: var(--text-soft);
     }
 
-    .amazon-row {
+    .store-badge {
+      margin-top: 5px;
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      padding: 6px 11px;
+      padding: 7px 11px;
       border-radius: 18px;
-      margin-top: 5px;
       border: 1px solid rgba(0, 0, 0, 0.06);
-      background: #f9f9fb;
+      background: #f9fafb;
       font-size: 11px;
-      color: #3a3a3c;
+      color: #374151;
     }
 
-    .amazon-pill {
-      width: 44px;
+    .store-pill {
+      width: 46px;
       height: 18px;
       border-radius: 999px;
       background: #111827;
@@ -360,22 +354,23 @@
       overflow: hidden;
     }
 
-    .amazon-pill::before {
+    .store-pill::before {
       content: "";
       position: absolute;
-      inset: 3px 8px;
+      inset: 3px 7px;
       border-radius: inherit;
       background: linear-gradient(90deg, #f97316, #facc15);
     }
 
-    .legal-inline {
+    .legal {
       margin-top: 6px;
       font-size: 10px;
-      color: #a1a1a6;
-      max-width: 460px;
+      color: #9ca3af;
+      max-width: 480px;
     }
 
-    /* Right column only on large screens */
+    /* right column desktop card */
+
     .right {
       display: none;
     }
@@ -387,67 +382,68 @@
     }
 
     .product-card {
-      border-radius: 26px;
-      padding: 14px 14px 12px;
-      background: linear-gradient(145deg, #ffffff, #f4f4f7);
-      border: 1px solid var(--card-border);
-      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.06);
-      overflow: hidden;
+      border-radius: 28px;
+      background: radial-gradient(circle at top left, #f5f5f7 0, #e5e7eb 60%);
+      border: 1px solid var(--border-subtle);
+      box-shadow: var(--shadow-soft);
+      padding: 16px 16px 14px;
       position: relative;
+      overflow: hidden;
     }
 
-    .product-headline {
+    .product-header {
       display: flex;
       justify-content: space-between;
-      gap: 10px;
-      margin-bottom: 8px;
       align-items: center;
+      gap: 12px;
+      margin-bottom: 8px;
     }
 
     .product-label {
       font-size: 11px;
       text-transform: uppercase;
       letter-spacing: 0.18em;
-      color: var(--text-muted);
+      color: var(--text-soft);
     }
 
-    .badge-stack {
+    .tag-stack {
       display: flex;
       flex-direction: column;
       gap: 4px;
       align-items: flex-end;
     }
 
-    .badge {
+    .tag {
       padding: 4px 8px;
-      border-radius: 14px;
+      border-radius: 20px;
       font-size: 10px;
-      border: 1px solid rgba(0, 0, 0, 0.04);
       background: rgba(255, 255, 255, 0.95);
-      color: #3a3a3c;
-      max-width: 140px;
+      border: 1px solid rgba(0, 0, 0, 0.04);
+      color: #374151;
+      max-width: 150px;
       text-align: right;
     }
 
-    .badge strong {
+    .tag strong {
       display: block;
-      color: var(--accent-blue);
+      color: var(--accent-strong);
       font-weight: 600;
     }
 
-    .product-img-wrap {
+    .hero-desktop-wrap {
       margin-top: 4px;
       display: flex;
       justify-content: center;
-      padding: 10px 4px 4px;
+      padding: 10px 4px 6px;
     }
 
-    .product-img {
+    .hero-desktop-img {
       width: 100%;
-      max-width: 240px;
+      max-width: 260px;
       border-radius: 22px;
-      transform: rotate(-8deg);
-      box-shadow: 0 18px 32px rgba(0, 0, 0, 0.18);
+      transform: rotate(-10deg);
+      box-shadow: 0 20px 36px rgba(0, 0, 0, 0.26);
+      object-fit: cover;
     }
 
     .feature-strip {
@@ -456,22 +452,22 @@
       flex-wrap: wrap;
       gap: 6px;
       font-size: 11px;
-      color: var(--text-muted);
+      color: var(--text-soft);
     }
 
     .feature-pill {
       padding: 5px 8px;
       border-radius: 14px;
-      background: rgba(255, 255, 255, 0.9);
+      background: rgba(255, 255, 255, 0.96);
       border: 1px solid rgba(0, 0, 0, 0.04);
     }
 
-    /* Details overlay */
+    /* overlay for more details */
 
     .overlay {
       position: fixed;
       inset: 0;
-      background: rgba(0, 0, 0, 0.35);
+      background: rgba(0, 0, 0, 0.38);
       display: none;
       align-items: center;
       justify-content: center;
@@ -485,11 +481,11 @@
     .overlay-panel {
       background: #ffffff;
       border-radius: 22px;
-      max-width: 480px;
+      max-width: 520px;
       width: calc(100% - 32px);
       max-height: calc(100% - 80px);
       padding: 18px 18px 16px;
-      box-shadow: 0 24px 50px rgba(0, 0, 0, 0.2);
+      box-shadow: 0 24px 50px rgba(0, 0, 0, 0.24);
       display: flex;
       flex-direction: column;
     }
@@ -509,12 +505,12 @@
 
     .overlay-close {
       border: none;
-      background: #f2f2f7;
+      background: #f3f4f6;
       border-radius: 999px;
-      width: 26px;
-      height: 26px;
+      width: 28px;
+      height: 28px;
       cursor: pointer;
-      font-size: 15px;
+      font-size: 16px;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -522,8 +518,8 @@
 
     .overlay-body {
       font-size: 13px;
-      color: #3a3a3c;
-      line-height: 1.55;
+      color: #374151;
+      line-height: 1.6;
       overflow: auto;
       padding-right: 4px;
     }
@@ -547,15 +543,15 @@
     }
 
     .overlay-legal {
-      margin-top: 8px;
+      margin-top: 10px;
       font-size: 11px;
-      color: #a1a1a6;
+      color: #9ca3af;
     }
   </style>
 
   <script>
     const AMAZON_URL =
-      "https://amzn.to/3XzheHU";
+      "https://www.amazon.com/Yes4All-5ZWZ-Dumbbell-Adjustable-105lbs/dp/B0CQY6PTNZ/?tag=joyflip-20";
 
     function goToAmazon(event) {
       event.preventDefault();
@@ -574,180 +570,194 @@
       document.querySelectorAll("[data-amazon-link]").forEach((el) => {
         el.addEventListener("click", goToAmazon);
       });
+
       document.querySelectorAll("[data-open-details]").forEach((el) => {
         el.addEventListener("click", openOverlay);
       });
-      document
-        .getElementById("overlayClose")
-        .addEventListener("click", closeOverlay);
-      document
-        .getElementById("detailsOverlay")
-        .addEventListener("click", (event) => {
-          if (event.target.id === "detailsOverlay") closeOverlay();
-        });
+
+      const overlay = document.getElementById("detailsOverlay");
+      const overlayClose = document.getElementById("overlayClose");
+
+      overlayClose.addEventListener("click", closeOverlay);
+      overlay.addEventListener("click", (event) => {
+        if (event.target === overlay) closeOverlay();
+      });
     });
   </script>
 </head>
 <body>
   <main class="page">
-    <section class="card">
-      <div class="card-inner">
+    <section class="frame">
+      <div class="layout">
         <div class="left">
-          <div class="pill">
-            <span class="pill-dot"></span>
-            <span>Featured pick from Joyflip</span>
+          <div class="badge">
+            <span class="badge-dot"></span>
+            <span>For serious home lifters</span>
           </div>
 
-          <h1>Bluetooth speaker for everyday music and moments</h1>
+          <h1>Adjustable dumbbell pair for compact heavy training</h1>
 
           <p class="subtitle">
-            Clear sound, subtle light, and a compact design ready for the pool side table, the kitchen counter, or a weekend trip.
+            Cast iron weight that lives under a desk or in a corner and still lets you load up for presses, rows, lunges, and everything in your push pull leg days.
           </p>
 
-          <!-- hero image (mobile / smaller widths) -->
-          <div class="hero-image">
-            <div class="hero-image-inner">
+          <!-- hero for mobile -->
+          <div class="hero-mobile">
+            <div class="hero-mobile-inner">
               <img
-                src="https://m.media-amazon.com/images/I/81l7mB5LhsL._AC_SY300_SX300_QL70_ML2_.jpg"
-                alt="Portable Bluetooth speaker with water splashes and subtle lights"
-                class="hero-img"
+                src="https://m.media-amazon.com/images/I/81FO6JqHFEL._AC_SL1500_.jpg"
+                alt="Yes4All adjustable dumbbell set 105 pound pair on the floor"
                 loading="lazy"
               />
             </div>
           </div>
 
           <div class="meta-strip">
-            <div class="meta-item">
+            <div class="meta-row">
               <div class="meta-bullet"></div>
-              <span>
-                Up to
-                <span class="meta-highlight">twenty hours</span>
-                of play time at mid volume
-              </span>
+              <div class="meta-label">
+                Up to a total of
+                <span class="meta-strong">around one hundred five pounds</span>
+                across the pair so you can keep adding load as you get stronger.
+              </div>
             </div>
-            <div class="meta-item">
+            <div class="meta-row">
               <div class="meta-bullet"></div>
-              <span>
-                Water resistant body with
-                <span class="meta-highlight">IPX5</span>
-                rating for splashes and light rain
-              </span>
+              <div class="meta-label">
+                Solid
+                <span class="meta-strong">cast iron plates</span>
+                with spin collars for a simple old school feel and secure sets.
+              </div>
+            </div>
+            <div class="meta-row">
+              <div class="meta-bullet"></div>
+              <div class="meta-label">
+                Threaded chrome handles with
+                <span class="meta-strong">knurled grip</span>
+                so you can pull and press without fighting the handle.
+              </div>
             </div>
           </div>
 
-          <div class="actions">
+          <div class="cta-row">
             <a
-              href="https://amzn.to/3XzheHU"
+              href="https://www.amazon.com/Yes4All-5ZWZ-Dumbbell-Adjustable-105lbs/dp/B0CQY6PTNZ/?tag=joyflip-20"
               class="btn-primary"
               data-amazon-link
             >
-              <span class="icon">🛒</span>
-              <span>View price on Amazon</span>
+              <span class="icon">🏋🏽</span>
+              <span>Check price and stock on Amazon</span>
             </a>
 
             <button class="btn-secondary" type="button" data-amazon-link>
-              <span>See reviews</span>
+              <span>Scan reviews</span>
               <span>↗</span>
             </button>
           </div>
 
-          <div class="meta-links">
-            <button class="meta-link" type="button" data-open-details>
-              Why we like this
+          <div class="links-row">
+            <button class="text-link" type="button" data-open-details>
+              What this setup is great for
             </button>
-            <button class="meta-link" type="button" data-open-details>
-              Specs and details
+            <button class="text-link" type="button" data-open-details>
+              How lifters usually program it
             </button>
           </div>
 
-          <div>
-            <div class="as-seen">Sold on</div>
-            <div class="amazon-row">
-              <div class="amazon-pill"></div>
-              <div>Amazon.com · ships from Amazon</div>
+          <div class="store-strip">
+            Sold on
+            <div class="store-badge">
+              <div class="store-pill"></div>
+              <div>Amazon.com ships and handles order support</div>
             </div>
           </div>
 
-          <p class="legal-inline">
+          <p class="legal">
+            Product details on this page are summarized from manufacturer and retailer information.
+            Exact weight options, contents, and pricing can change, so always refer to the Amazon product page for the latest information.
             As an Amazon Associate, Joyflip may earn from qualifying purchases made through links on this page.
           </p>
         </div>
 
+        <!-- right side card visible on larger screens -->
         <div class="right">
-          <div class="product-card">
-            <div class="product-headline">
-              <div class="product-label">Joyflip edit</div>
-              <div class="badge-stack">
-                <div class="badge">
-                  <strong>Versatile speaker</strong>
-                  For home, travel, or the pool side table
+          <article class="product-card">
+            <div class="product-header">
+              <div class="product-label">Joyflip training pick</div>
+              <div class="tag-stack">
+                <div class="tag">
+                  <strong>Home gym workhorse</strong>
+                  Lives in one corner and covers almost every lift you care about.
                 </div>
-                <div class="badge">
-                  <strong>Easy to carry</strong>
-                  Drop in a bag, charge and go
+                <div class="tag">
+                  <strong>Progress friendly</strong>
+                  Add plates in small jumps so your programming stays smooth.
                 </div>
               </div>
             </div>
 
-            <div class="product-img-wrap">
+            <div class="hero-desktop-wrap">
               <img
-                src="https://m.media-amazon.com/images/I/81l7mB5LhsL._AC_SY300_SX300_QL70_ML2_.jpg"
-                alt="Portable Bluetooth speaker with water splashes and subtle lights"
-                class="product-img"
+                src="https://m.media-amazon.com/images/I/81FO6JqHFEL._AC_SL1500_.jpg"
+                alt="Yes4All adjustable cast iron dumbbell pair on a training floor"
+                class="hero-desktop-img"
                 loading="lazy"
               />
             </div>
 
             <div class="feature-strip">
-              <div class="feature-pill">IPX5 water resistance</div>
-              <div class="feature-pill">Pair two for stereo</div>
-              <div class="feature-pill">Long play time</div>
-              <div class="feature-pill">Bluetooth five point three</div>
+              <div class="feature-pill">Adjustable weight plates</div>
+              <div class="feature-pill">Cast iron build</div>
+              <div class="feature-pill">Spin lock collars</div>
+              <div class="feature-pill">Knurled chrome handles</div>
+              <div class="feature-pill">Full body training</div>
             </div>
-          </div>
+          </article>
         </div>
       </div>
     </section>
   </main>
 
-  <!-- details overlay -->
+  <!-- overlay -->
   <div class="overlay" id="detailsOverlay" aria-hidden="true">
     <div class="overlay-panel">
       <div class="overlay-header">
-        <div class="overlay-title">About this speaker</div>
+        <div class="overlay-title">How lifters use this set</div>
         <button class="overlay-close" id="overlayClose" aria-label="Close details">
           ✕
         </button>
       </div>
       <div class="overlay-body">
-        <h3>Listening experience</h3>
+        <h3>Sessions that feel like a real gym</h3>
         <p>
-          Dual drivers give a clear and full sound for podcasts, playlists, and background music.
-          You can also pair a second unit for a wider stereo field when you want more presence.
+          With an adjustable pair you can run push pull legs, upper lower, or simple full body days without a room full of gear.
+          Swap plates between sets and move from rows and presses to lunges, split squats, and carries.
         </p>
 
-        <h3>Built to move around</h3>
+        <h3>Who this works well for</h3>
         <ul>
-          <li>Compact enough to sit on a desk, nightstand, or pool side table.</li>
-          <li>Rated IPX5, so splashes and light rain are fine. Submerging it is not recommended.</li>
-          <li>Battery is rated for long play time at moderate volume; very loud listening will shorten it.</li>
+          <li>Lifters who want heavy enough load for presses, rows, and goblet squats at home.</li>
+          <li>People who like the feel of cast iron and threaded collars more than plastic selector systems.</li>
+          <li>Anyone trying to keep a clean room layout and still get real strength work done.</li>
         </ul>
 
-        <h3>Connection</h3>
+        <h3>Programming ideas</h3>
         <p>
-          Bluetooth five point three supports a stable wireless link with most phones, tablets, and laptops.
-          There is also a built in microphone so you can take calls without picking up your phone.
+          Most people run simple schemes here.
+          Think steady sets of eight to twelve for upper body and six to ten for legs, adding small plates as the weights start to feel easier.
+          If you like, you can also pair this with bands or body weight work for finishers.
         </p>
 
         <h3>Good to know</h3>
         <p>
-          Exact battery life, range, and durability depend on volume level, content, and how you use it.
-          For the most accurate and current information, always check the product page on Amazon.
+          Exact plate counts, handle lengths, and package contents can vary by configuration.
+          Always check the full breakdown and current information on the Amazon listing before you order so it matches what you need.
         </p>
 
         <p class="overlay-legal">
-          Product details are summarized from the manufacturer information for model C27C.
-          As an Amazon Associate, Joyflip may earn from qualifying purchases made through links on this page.
+          This page is a curated overview for people building a home strength setup.
+          It is not a substitute for professional coaching or medical advice.
+          For precise specifications, safety guidance, and the latest details, refer to the product description and instructions provided by the manufacturer on Amazon.
         </p>
       </div>
     </div>
