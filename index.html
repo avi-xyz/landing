@@ -15,19 +15,19 @@
     property="og:description"
     content="Heavy cast iron adjustable dumbbell pair for home gym strength training. Spins on and off in seconds so you can keep your session moving."
   />
-  <!-- Replace with your actual product image URL from Amazon -->
+  <!-- Replace with your main product image URL from Amazon -->
   <meta
     property="og:image"
-    content="https://m.media-amazon.com/images/I/81FO6JqHFEL._AC_SL1500_.jpg"
+    content="https://m.media-amazon.com/images/I/81ZYKESi+SL._AC_SL1500_.jpg"
   />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://joyflip.com" />
 
-  <!-- Favicon hooks (if you already added these, keep your existing ones) -->
+  <!-- Favicon hooks -->
   <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png" />
   <link rel="icon" type="image/png" sizes="64x64" href="favicon-64.png" />
   <link rel="icon" type="image/svg+xml" href="favicon.svg" />
-  
+
   <!-- Cloudflare Web Analytics -->
   <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "ad3efa54621146f694971c7ed698eda6"}'>  
   </script>
@@ -39,7 +39,7 @@
     "@context": "https://schema.org",
     "@type": "Product",
     "name": "Yes4All Adjustable Dumbbell Set 105 lb Pair",
-    "image": "https://m.media-amazon.com/images/I/81FO6JqHFEL._AC_SL1500_.jpg",
+    "image": ["https://m.media-amazon.com/images/I/81ZYKESi+SL._AC_SL1500_.jpg", "https://m.media-amazon.com/images/I/81V0-oVm1rL._AC_SL1500_.jpg", "IMAGE_3_URL"],
     "description": "Adjustable cast iron dumbbell pair up to a total of 105 pounds. Compact home gym strength training solution with spin lock collars and knurled handles.",
     "brand": {
       "@type": "Brand",
@@ -167,23 +167,36 @@
       line-height: 1.6;
     }
 
-    /* hero image for mobile and narrow widths */
+    /* carousel shared styles */
 
-    .hero-mobile {
+    .carousel {
       margin-top: 10px;
-      margin-bottom: 6px;
+      margin-bottom: 8px;
+      position: relative;
     }
 
-    .hero-mobile-inner {
+    .carousel-viewport {
       border-radius: 24px;
       background: radial-gradient(circle at top left, #f5f5f7 0, #e5e7eb 70%);
       box-shadow: var(--shadow-soft);
-      padding: 12px;
-      display: flex;
-      justify-content: center;
+      overflow: hidden;
+      touch-action: pan-y;
     }
 
-    .hero-mobile img {
+    .carousel-track {
+      display: flex;
+      transition: transform 260ms ease-out;
+      will-change: transform;
+    }
+
+    .carousel-slide {
+      min-width: 100%;
+      display: flex;
+      justify-content: center;
+      padding: 12px;
+    }
+
+    .carousel-slide img {
       width: 100%;
       max-width: 260px;
       border-radius: 20px;
@@ -192,9 +205,79 @@
       object-fit: cover;
     }
 
+    /* arrows for desktop carousel */
+
+    .carousel-arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 30px;
+      height: 30px;
+      border-radius: 999px;
+      border: none;
+      background: rgba(243, 244, 246, 0.94);
+      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      font-size: 16px;
+      color: #111827;
+      padding: 0;
+    }
+
+    .carousel-arrow.left {
+      left: 10px;
+    }
+
+    .carousel-arrow.right {
+      right: 10px;
+    }
+
+    /* dots */
+
+    .carousel-dots {
+      display: flex;
+      justify-content: center;
+      gap: 6px;
+      margin-top: 6px;
+    }
+
+    .carousel-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 999px;
+      background: #d1d5db;
+    }
+
+    .carousel-dot.active {
+      background: #111827;
+    }
+
+    /* mobile versus desktop carousel visibility */
+
+    .carousel.mobile-carousel {
+      display: block;
+    }
+
+    .carousel.desktop-carousel {
+      display: none;
+    }
+
+    .mobile-carousel .carousel-arrow {
+      display: none;
+    }
+
     @media (min-width: 900px) {
-      .hero-mobile {
+      .carousel.mobile-carousel {
         display: none;
+      }
+      .carousel.desktop-carousel {
+        display: block;
+        margin-top: 8px;
+      }
+      .desktop-carousel .carousel-arrow {
+        display: flex;
       }
     }
 
@@ -374,8 +457,6 @@
       max-width: 480px;
     }
 
-    /* right column desktop card */
-
     .right {
       display: none;
     }
@@ -435,22 +516,6 @@
       font-weight: 600;
     }
 
-    .hero-desktop-wrap {
-      margin-top: 4px;
-      display: flex;
-      justify-content: center;
-      padding: 10px 4px 6px;
-    }
-
-    .hero-desktop-img {
-      width: 100%;
-      max-width: 260px;
-      border-radius: 22px;
-      transform: rotate(-10deg);
-      box-shadow: 0 20px 36px rgba(0, 0, 0, 0.26);
-      object-fit: cover;
-    }
-
     .feature-strip {
       margin-top: 10px;
       display: flex;
@@ -466,8 +531,6 @@
       background: rgba(255, 255, 255, 0.96);
       border: 1px solid rgba(0, 0, 0, 0.04);
     }
-
-    /* overlay for more details */
 
     .overlay {
       position: fixed;
@@ -571,6 +634,70 @@
       document.getElementById("detailsOverlay").classList.remove("open");
     }
 
+    function initCarousel(root) {
+      const viewport = root.querySelector(".carousel-viewport");
+      const track = root.querySelector(".carousel-track");
+      const slides = Array.from(root.querySelectorAll(".carousel-slide"));
+      const dots = Array.from(root.querySelectorAll(".carousel-dot"));
+      const prevButton = root.querySelector(".carousel-arrow.left");
+      const nextButton = root.querySelector(".carousel-arrow.right");
+
+      let currentIndex = 0;
+      let startX = 0;
+      let currentX = 0;
+      let isDragging = false;
+
+      function updateCarousel() {
+        track.style.transform = "translateX(" + (-currentIndex * 100) + "%)";
+        dots.forEach((dot, index) => {
+          dot.classList.toggle("active", index === currentIndex);
+        });
+      }
+
+      function goToIndex(index) {
+        if (index < 0) index = 0;
+        if (index >= slides.length) index = slides.length - 1;
+        currentIndex = index;
+        updateCarousel();
+      }
+
+      if (prevButton && nextButton) {
+        prevButton.addEventListener("click", () => {
+          goToIndex(currentIndex - 1);
+        });
+        nextButton.addEventListener("click", () => {
+          goToIndex(currentIndex + 1);
+        });
+      }
+
+      // touch swipe for mobile
+      viewport.addEventListener("touchstart", (event) => {
+        if (event.touches.length !== 1) return;
+        isDragging = true;
+        startX = event.touches[0].clientX;
+        currentX = startX;
+      });
+
+      viewport.addEventListener("touchmove", (event) => {
+        if (!isDragging) return;
+        currentX = event.touches[0].clientX;
+      });
+
+      viewport.addEventListener("touchend", () => {
+        if (!isDragging) return;
+        const deltaX = currentX - startX;
+        const threshold = 40;
+        if (deltaX > threshold) {
+          goToIndex(currentIndex - 1);
+        } else if (deltaX < -threshold) {
+          goToIndex(currentIndex + 1);
+        }
+        isDragging = false;
+      });
+
+      updateCarousel();
+    }
+
     window.addEventListener("DOMContentLoaded", () => {
       document.querySelectorAll("[data-amazon-link]").forEach((el) => {
         el.addEventListener("click", goToAmazon);
@@ -586,6 +713,10 @@
       overlayClose.addEventListener("click", closeOverlay);
       overlay.addEventListener("click", (event) => {
         if (event.target === overlay) closeOverlay();
+      });
+
+      document.querySelectorAll("[data-carousel]").forEach((root) => {
+        initCarousel(root);
       });
     });
   </script>
@@ -606,14 +737,25 @@
             Cast iron weight that lives under a desk or in a corner and still lets you load up for presses, rows, lunges, and everything in your push pull leg days.
           </p>
 
-          <!-- hero for mobile -->
-          <div class="hero-mobile">
-            <div class="hero-mobile-inner">
-              <img
-                src="https://m.media-amazon.com/images/I/81FO6JqHFEL._AC_SL1500_.jpg"
-                alt="Yes4All adjustable dumbbell set 105 pound pair on the floor"
-                loading="lazy"
-              />
+          <!-- mobile swipe carousel -->
+          <div class="carousel mobile-carousel" data-carousel>
+            <div class="carousel-viewport">
+              <div class="carousel-track">
+                <div class="carousel-slide">
+                  <img src="https://m.media-amazon.com/images/I/81ZYKESi+SL._AC_SL1500_.jpg" alt="Yes4All adjustable dumbbell set view one" loading="lazy" />
+                </div>
+                <div class="carousel-slide">
+                  <img src="https://m.media-amazon.com/images/I/81V0-oVm1rL._AC_SL1500_.jpg" alt="Yes4All adjustable dumbbell set view two" loading="lazy" />
+                </div>
+                <div class="carousel-slide">
+                  <img src="IMAGE_3_URL" alt="Yes4All adjustable dumbbell set view three" loading="lazy" />
+                </div>
+              </div>
+            </div>
+            <div class="carousel-dots">
+              <div class="carousel-dot"></div>
+              <div class="carousel-dot"></div>
+              <div class="carousel-dot"></div>
             </div>
           </div>
 
@@ -673,7 +815,7 @@
             Sold on
             <div class="store-badge">
               <div class="store-pill"></div>
-              <div>Amazon.com ships and handles order support</div>
+              <div>Amazon dot com ships and handles order support</div>
             </div>
           </div>
 
@@ -684,7 +826,7 @@
           </p>
         </div>
 
-        <!-- right side card visible on larger screens -->
+        <!-- desktop carousel in the right side card -->
         <div class="right">
           <article class="product-card">
             <div class="product-header">
@@ -701,13 +843,27 @@
               </div>
             </div>
 
-            <div class="hero-desktop-wrap">
-              <img
-                src="https://m.media-amazon.com/images/I/81FO6JqHFEL._AC_SL1500_.jpg"
-                alt="Yes4All adjustable cast iron dumbbell pair on a training floor"
-                class="hero-desktop-img"
-                loading="lazy"
-              />
+            <div class="carousel desktop-carousel" data-carousel>
+              <div class="carousel-viewport">
+                <div class="carousel-track">
+                  <div class="carousel-slide">
+                    <img src="https://m.media-amazon.com/images/I/81ZYKESi+SL._AC_SL1500_.jpg" alt="Yes4All adjustable dumbbell set view one" loading="lazy" />
+                  </div>
+                  <div class="carousel-slide">
+                    <img src="https://m.media-amazon.com/images/I/81V0-oVm1rL._AC_SL1500_.jpg" alt="Yes4All adjustable dumbbell set view two" loading="lazy" />
+                  </div>
+                  <div class="carousel-slide">
+                    <img src="IMAGE_3_URL" alt="Yes4All adjustable dumbbell set view three" loading="lazy" />
+                  </div>
+                </div>
+              </div>
+              <button class="carousel-arrow left" type="button" aria-label="Previous image">‹</button>
+              <button class="carousel-arrow right" type="button" aria-label="Next image">›</button>
+              <div class="carousel-dots">
+                <div class="carousel-dot"></div>
+                <div class="carousel-dot"></div>
+                <div class="carousel-dot"></div>
+              </div>
             </div>
 
             <div class="feature-strip">
@@ -723,7 +879,6 @@
     </section>
   </main>
 
-  <!-- overlay -->
   <div class="overlay" id="detailsOverlay" aria-hidden="true">
     <div class="overlay-panel">
       <div class="overlay-header">
