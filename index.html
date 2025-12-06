@@ -412,43 +412,87 @@
       cursor: pointer;
     }
 
-    .store-strip {
-      margin-top: 10px;
-      font-size: 10px;
-      text-transform: uppercase;
-      letter-spacing: 0.16em;
-      color: var(--text-soft);
-    }
+    .store-line {
+  margin-top: 14px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
 
-    .store-badge {
-      margin-top: 5px;
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 7px 11px;
-      border-radius: 18px;
-      border: 1px solid rgba(0, 0, 0, 0.06);
-      background: #f9fafb;
-      font-size: 11px;
-      color: #374151;
-    }
+.store-label {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: var(--text-soft);
+}
 
-    .store-pill {
-      width: 46px;
-      height: 18px;
-      border-radius: 999px;
-      background: #111827;
-      position: relative;
-      overflow: hidden;
-    }
+.store-chip {
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  background: #f9fafb;
+  border-radius: 999px;
+  padding: 6px 14px 6px 8px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  box-shadow: 0 6px 14px rgba(15, 23, 42, 0.06);
+  transition:
+    background var(--transition-fast),
+    box-shadow var(--transition-fast),
+    transform var(--transition-fast),
+    border-color var(--transition-fast);
+}
 
-    .store-pill::before {
-      content: "";
-      position: absolute;
-      inset: 3px 7px;
-      border-radius: inherit;
-      background: linear-gradient(90deg, #f97316, #facc15);
-    }
+.store-chip:hover {
+  background: #ffffff;
+  border-color: rgba(0, 0, 0, 0.12);
+  box-shadow: 0 10px 22px rgba(15, 23, 42, 0.08);
+  transform: translateY(-1px);
+}
+
+.store-logo {
+  width: 28px;
+  height: 20px;
+  border-radius: 999px;
+  background: #020617;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 4px;
+}
+
+.store-logo-inner {
+  width: 100%;
+  height: 100%;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #f97316, #facc15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  font-weight: 600;
+  color: #111827;
+  text-transform: lowercase;
+}
+
+.store-chip-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.store-brand {
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #111827;
+}
+
+.store-sub {
+  font-size: 10px;
+  color: #6b7280;
+}
+
 
     .legal {
       margin-top: 6px;
@@ -811,13 +855,19 @@
             </button>
           </div>
 
-          <div class="store-strip">
-            Sold on
-            <div class="store-badge">
-              <div class="store-pill"></div>
-              <div>Amazon dot com ships and handles order support</div>
-            </div>
-          </div>
+          <div class="store-line">
+  <span class="store-label">Sold on</span>
+  <button class="store-chip" type="button" data-amazon-link>
+    <span class="store-logo">
+      <span class="store-logo-inner">a</span>
+    </span>
+    <span class="store-chip-text">
+      <span class="store-brand">Amazon dot com</span>
+      <span class="store-sub">Ships and handles order support</span>
+    </span>
+  </button>
+</div>
+
 
           <p class="legal">
             Product details on this page are summarized from manufacturer and retailer information.
